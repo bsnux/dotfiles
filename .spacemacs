@@ -97,6 +97,8 @@ in `dotspacemacs/user-config'."
   (setq fiplr-ignored-globs '((directories (".git" ".svn" "env"))
                               (files ("*.jpg" "*.png" "*.zip" "*~" "*.pyc"))))
   (global-set-key (kbd "<f5>") 'fiplr-find-file)
+  ;; git-gutter
+  (global-git-gutter-mode +1)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
