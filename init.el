@@ -79,9 +79,11 @@ my:el-get-packages
   fiplr
   haskell-mode
   fill-column-indicator
+  git-gutter
   color-theme
   color-theme-zenburn
   monokai-theme
+  darcula-theme
   color-theme-almost-monokai))
 
 (setq my:el-get-packages
@@ -141,7 +143,8 @@ my:el-get-packages
 (evil-mode 1)                           ; evil-mode
 
 ;(load-theme 'zenburn t)
-(load-theme 'monokai t)
+;;(load-theme 'monokai t)
+(require 'darcula-theme)
 
 (fset 'yes-or-no-p 'y-or-n-p)           ; Changes all yes/no questions to y/n type
 
@@ -206,6 +209,9 @@ my:el-get-packages
  ;;(set-face-attribute 'default nil :height 115)
  (set-face-attribute 'default nil :height 112)
  ;; (set-face-attribute 'default nil :height 105)
+
+ (if window-system
+	 (set-face-attribute 'default nil :height 120))
  )
 
 ;; Disabling tool-bar
@@ -326,6 +332,9 @@ my:el-get-packages
 ;; column to the left:
 (global-set-key [C-S-right] 'shift-right)
 (global-set-key [C-S-left] 'shift-left)
+
+;; Activating git-gutter
+(global-git-gutter-mode +1)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
